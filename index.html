@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6주차 과제</title>
+	<style type="text/css">
+		body{background: pink;}
+		.gl{width:500px;display: block;margin: auto;margin-top: 100px;}
+		.ble{width: 200px; position: absolute;;animation: bb 5s infinite ease-in-out;}
+			@keyframes bb{from{bottom:1000px;}
+						to{bottom:0px;}}
+		</style>
+</head>
+<body>
+	<div>
+		<img src="bubble.png "id="bu" class="ble">
+	</div>
+	<div>
+		<img src="girl.jpg" class="gl">
+	</div>
+	<script type="text/javascript">
+		for(var i=0; i<50; i++){
+		var b = bu.cloneNode(true);
+		b.id = i;
+		b.style.left = Math.random()*1500 +"px";
+		b.style.animationDuration = (5 + Math.random()*10) +"s";
+		var bbbb = Math.random()*200 + "px";
+		b.style.height =bbbb;
+		b.style.width = bbbb;
+		document.body.appendChild(b);
+	}	
+	function rgbmake(){
+		var a = randomBH(100,255);
+		var b = Math.random()*255;
+		var c = Math.random()*255;
+		var d ="rgb("+a+","+b+","+c+")";
+		return d;
+	}
+
+	function randomBH(min, max){
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	</script>
+</body>
+</html>
